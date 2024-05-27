@@ -6,7 +6,7 @@ import os
 import textwrap
 import google.generativeai as genai
 
-GOOGLE_API_KEY=''
+GOOGLE_API_KEY='AIzaSyDtiq-CBPFG500PMG_UJtO08wf4EQnz9H4'
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-pro')
 
@@ -19,9 +19,7 @@ def to_markdown(text):
   return textwrap.indent(text, '', predicate=lambda _: True)
 
 
-
 def home(request):
-
     global x
     length=request.GET.get('length')
     instructions = f""" You are given with a role of a psychiatrist. You will be provided with a sentence delimited within triple backticks or an paragraph and you should analyse the sentiment of the paragraph and tell the emotions of the writer of the paragraph.
